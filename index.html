@@ -212,6 +212,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(
   <div class="final-check">Não acredite neste site.</div>
   <p style="font-size:clamp(20px,3vw,30px);font-weight:850;max-width:760px;line-height:1.2">Confira as fontes. Leia. Compare. Tire a sua própria conclusão.</p>
   <p style="max-width:760px;color:#c7c2b7;line-height:1.6">Antes de decidir seu voto — inclusive branco ou nulo — vale conferir os fatos e entender o contexto. Democracia também depende de decisões informadas.</p>
+  <p style="max-width:760px;color:#e7ff3f;font-weight:900;line-height:1.4">2º turno das Eleições 2026: 25 de outubro.</p>
 
   <div class="result-actions">
     <a class="cta" href="#fontes">Rever as fontes</a>
@@ -245,8 +246,8 @@ function render(){locked=false;const x=questions[i];const qb=document.querySelec
 function choose(idx,button){if(locked)return;locked=true;const x=questions[i],buttons=[...document.querySelectorAll(".answer")];buttons.forEach((b,n)=>{b.disabled=true;if(n===x.answer)b.classList.add("good")});if(idx===x.answer){score++;el("status").textContent="Você acertou."}else{button.classList.add("bad");el("status").textContent="Não foi dessa vez."}el("answerTitle").textContent=x.title;el("context").textContent=x.context;el("source").href=x.source;el("source").textContent="Abrir fonte: "+x.sourceName+" ↗";el("scoreTop").textContent=score+" "+(score===1?"acerto":"acertos");reveal.classList.add("show")}
 el("next").onclick=()=>{if(i<questions.length-1){i++;render()}else finish()};function finish(){el("game").style.display="none";el("result").classList.add("show");el("finalScore").textContent=score+"/"+questions.length;el("bar").style.width="100%"}
 el("restart").onclick=()=>{i=0;score=0;el("game").style.display="block";el("result").classList.remove("show");render();document.querySelector("#quiz").scrollIntoView()};
-el("share").onclick=async()=>{const text="Eu fiz "+score+"/"+questions.length+" no quiz “Quem fez isso?”. Não fique só na memória: confira as fontes e tire sua própria conclusão.";if(navigator.share){try{await navigator.share({title:"Quem fez isso?",text,url:location.href})}catch(e){}}else{await navigator.clipboard.writeText(text+" "+location.href);alert("Resultado copiado!")}};
-el("shareWhatsapp").onclick=()=>{const text="Eu fiz "+score+"/"+questions.length+" no quiz “Quem fez isso?”. Não fique só na memória: confira as fontes e tire sua própria conclusão. "+location.href;window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener")};
+el("share").onclick=async()=>{const text="Eu fiz "+score+"/"+questions.length+" no quiz “Quem fez isso?”. Não fique só na memória: confira as fontes e tire sua própria conclusão. 2º turno: 25/10/2026.";if(navigator.share){try{await navigator.share({title:"Quem fez isso?",text,url:location.href})}catch(e){}}else{await navigator.clipboard.writeText(text+" "+location.href);alert("Resultado copiado!")}};
+el("shareWhatsapp").onclick=()=>{const text="Eu fiz "+score+"/"+questions.length+" no quiz “Quem fez isso?”. Não fique só na memória: confira as fontes e tire sua própria conclusão. 2º turno: 25/10/2026. "+location.href;window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener")};
 const uniq=[...new Map(questions.map(q=>[q.source,q])).values()];el("sourcesGrid").innerHTML=uniq.map(q=>'<article class="source-card"><b>'+q.sourceName+'</b><a href="'+q.source+'" target="_blank" rel="noopener">'+q.source+'</a></article>').join("");
 const io=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in-view");io.unobserve(entry.target)}})},{threshold:.18});
 document.querySelectorAll(".reveal-on-scroll").forEach(node=>io.observe(node));
