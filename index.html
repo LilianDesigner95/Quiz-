@@ -99,6 +99,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(
   <div class="result-actions">
     <a class="cta" href="#fontes">Rever as fontes</a>
     <button class="ghost" id="restart">Refazer o quiz</button>
+    <button class="ghost" id="shareWhatsapp">Compartilhar no WhatsApp</button>
     <button class="ghost" id="share">Compartilhar</button>
   </div>
 </div></div></div></div></section>
@@ -128,6 +129,7 @@ function choose(idx,button){if(locked)return;locked=true;const x=questions[i],bu
 el("next").onclick=()=>{if(i<questions.length-1){i++;render()}else finish()};function finish(){el("game").style.display="none";el("result").classList.add("show");el("finalScore").textContent=score+"/"+questions.length;el("bar").style.width="100%"}
 el("restart").onclick=()=>{i=0;score=0;el("game").style.display="block";el("result").classList.remove("show");render();document.querySelector("#quiz").scrollIntoView()};
 el("share").onclick=async()=>{const text="Eu fiz "+score+"/"+questions.length+" no quiz “Quem fez isso?”. Não fique só na memória: confira as fontes e tire sua própria conclusão.";if(navigator.share){try{await navigator.share({title:"Quem fez isso?",text,url:location.href})}catch(e){}}else{await navigator.clipboard.writeText(text+" "+location.href);alert("Resultado copiado!")}};
+el("shareWhatsapp").onclick=()=>{const text="Eu fiz "+score+"/"+questions.length+" no quiz “Quem fez isso?”. Não fique só na memória: confira as fontes e tire sua própria conclusão. "+location.href;window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener")};
 const uniq=[...new Map(questions.map(q=>[q.source,q])).values()];el("sourcesGrid").innerHTML=uniq.map(q=>'<article class="source-card"><b>'+q.sourceName+'</b><a href="'+q.source+'" target="_blank" rel="noopener">'+q.source+'</a></article>').join("");render();
 </script>
 </body>
