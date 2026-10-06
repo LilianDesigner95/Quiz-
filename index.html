@@ -34,7 +34,83 @@
 .shock-red{background:#d70d0d;color:#fff}.shock-red a{color:#fff}
 .shock-black{background:#050505;color:#f4f1e9}.shock-black .shock-number{color:#e7ff3f}.shock-black a{color:#e7ff3f}
 .shock-paper{background:#f2efe7;color:#0b0b0b}.shock-paper a{color:#0b0b0b}
-footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.5}@media(max-width:640px){.shock-card{min-height:82svh;padding:62px 0}.wrap{width:min(100% - 22px,1080px)}.topbar .source-link{display:none}.hero{padding-bottom:34px}.impact{padding:62px 0}#quiz{padding-top:42px}.quiz-shell{box-shadow:6px 6px 0 var(--ink)}}
+.reveal-on-scroll{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.reveal-on-scroll.in-view{opacity:1;transform:none}
+.shock-number,.shock-word,.impact .number{will-change:transform,opacity}
+.shock-card.in-view .shock-number,.shock-card.in-view .shock-word,.impact.in-view .number{animation:impactPop .58s cubic-bezier(.2,.8,.2,1) both}
+.qbody.q-enter .question{animation:qEnter .3s ease both}
+.answer{transform:translateZ(0)}
+.answer:hover{transform:translateX(5px)}
+.final-fact,.future-card{transition:transform .2s ease,background .2s ease}
+.final-fact:hover,.future-card:hover{transform:translateY(-2px)}
+.cta,.ghost,.next{transition:transform .16s ease,box-shadow .16s ease,background .16s ease,color .16s ease}
+.cta:active,.ghost:active,.next:active{transform:scale(.98)}
+@keyframes impactPop{0%{opacity:0;transform:scale(.92) translateY(16px)}100%{opacity:1;transform:none}}
+@keyframes qEnter{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal-on-scroll{opacity:1!important;transform:none!important;transition:none!important}.shock-card.in-view .shock-number,.shock-card.in-view .shock-word,.impact.in-view .number,.qbody.q-enter .question{animation:none!important}.answer,.cta,.ghost,.next,.final-fact,.future-card{transition:none!important}}
+footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.5}
+@media(max-width:760px){
+  html{scroll-padding-top:62px}
+  body{overflow-x:hidden}
+  .wrap{width:min(100% - 20px,1080px)}
+  .topbar .wrap{height:54px}
+  .topbar .source-link{display:none}
+  .brand{font-size:14px}
+  .hero{min-height:92svh;padding:92px 0 30px;align-items:end}
+  h1{font-size:clamp(58px,19vw,94px);line-height:.82;max-width:100%;overflow-wrap:anywhere}
+  .hero p{font-size:18px;line-height:1.25;margin:20px 0 24px}
+  .cta{width:100%;padding:16px 18px;text-align:center;box-shadow:5px 5px 0 var(--acid)}
+  .micro{font-size:11px;line-height:1.5}
+  .shock-card{min-height:74svh;padding:54px 0}
+  .shock-number{font-size:clamp(82px,25vw,138px);line-height:.78;overflow-wrap:anywhere}
+  .shock-word{font-size:clamp(52px,16vw,86px);line-height:.85;overflow-wrap:anywhere}
+  .shock-card h2{font-size:clamp(34px,10vw,58px);line-height:.95;margin-top:20px}
+  .shock-card p{font-size:16px;line-height:1.5}
+  .impact{padding:52px 0}
+  .impact .number{font-size:clamp(72px,23vw,124px);line-height:.78}
+  .impact h2{font-size:clamp(32px,9vw,54px)}
+  .impact p{font-size:16px}
+  #quiz{padding:34px 0 72px;min-height:auto}
+  .quiz-shell{box-shadow:5px 5px 0 var(--ink)}
+  .quiz-head{padding:14px 14px;font-size:11px}
+  .qbody{padding:20px 16px 24px}
+  .tag{font-size:10px;margin-bottom:14px}
+  .question{font-size:clamp(28px,8.4vw,42px);line-height:1.02;margin-bottom:24px}
+  .answers{gap:10px}
+  .answer{font-size:16px;line-height:1.25;padding:15px 14px;min-height:54px}
+  .answer:hover{transform:none}
+  .reveal{margin-top:22px;padding-top:18px}
+  .reveal h3{font-size:clamp(28px,8vw,40px)}
+  .reveal p{font-size:15px;line-height:1.55}
+  .source{font-size:13px;line-height:1.35;word-break:break-word}
+  .next{width:100%;padding:15px}
+  .result-inner{padding:38px 18px 48px}
+  .result-title{font-size:clamp(52px,16vw,90px);line-height:.82}
+  .score{font-size:clamp(44px,14vw,72px)}
+  .result-sub{font-size:clamp(24px,7vw,34px)}
+  .final-fact{padding:20px 16px}
+  .final-fact b{font-size:clamp(32px,10vw,54px)}
+  .final-manifesto{padding:32px 0;margin:36px 0}
+  .final-manifesto h3{font-size:clamp(36px,10vw,58px)}
+  .final-check{font-size:clamp(46px,13vw,76px);line-height:.86}
+  .future-block{margin-top:44px;padding-top:36px}
+  .future-title{font-size:clamp(38px,11vw,64px)}
+  .future-grid{grid-template-columns:1fr}
+  .future-card{padding:20px 16px}
+  .result-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .result-actions .cta,.result-actions .ghost{width:100%;text-align:center}
+  .sources{padding:48px 0}
+  .sources h2{font-size:clamp(48px,14vw,78px)}
+  .sources-grid{grid-template-columns:1fr}
+}
+@media(max-width:390px){
+  .wrap{width:min(100% - 16px,1080px)}
+  h1{font-size:56px}
+  .question{font-size:27px}
+  .shock-number{font-size:78px}
+  .shock-word{font-size:50px}
+  .quiz-head{font-size:10px}
+}
   </style>
 </head>
 <body>
@@ -42,7 +118,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(
 <main>
 <section class="hero"><div class="wrap"><div class="eyebrow">Quiz factual • Brasil</div><h1>Você lembra?</h1><p>Quem fez isso? Quem falou isso? Teste sua memória política e confira a fonte antes de formar sua conclusão.</p><button class="cta" onclick="document.querySelector('#quiz').scrollIntoView()">Começar o quiz →</button><div class="micro">As perguntas abaixo usam dados e documentos públicos. O objetivo é apresentar fatos verificáveis com contexto e fonte, sem substituir a leitura integral dos documentos.</div></div></section>
 <section class="shock-stack">
-  <article class="shock-card shock-red">
+  <article class="shock-card reveal-on-scroll shock-red">
     <div class="wrap">
       <div class="shock-kicker">BRASIL • COVID-19</div>
       <div class="shock-number">708 MIL+</div>
@@ -52,7 +128,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(
     </div>
   </article>
 
-  <article class="shock-card shock-black">
+  <article class="shock-card reveal-on-scroll shock-black">
     <div class="wrap">
       <div class="shock-kicker">CPI DA PANDEMIA • 2021</div>
       <div class="shock-number">80</div>
@@ -62,7 +138,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(
     </div>
   </article>
 
-  <article class="shock-card shock-paper">
+  <article class="shock-card reveal-on-scroll shock-paper">
     <div class="wrap">
       <div class="shock-kicker">RACHADINHAS • ALERJ</div>
       <div class="shock-word">RACHADINHAS.</div>
@@ -72,7 +148,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(
     </div>
   </article>
 </section>
-<section class="impact vorcaro-impact"><div class="wrap"><div class="eyebrow">BANCO MASTER • DANIEL VORCARO</div><div class="number">R$ 131 MI</div><h2>pedidos para financiar o filme “Dark Horse”.</h2><p>Segundo relatórios da Polícia Federal tornados públicos em setembro de 2026, Flávio Bolsonaro pediu R$ 131 milhões a Daniel Vorcaro, então controlador do Banco Master, para financiar a cinebiografia de Jair Bolsonaro. A PF aponta que R$ 60 milhões teriam sido pagos. O inquérito investiga possível lavagem de dinheiro; não se trata de condenação. <a href="https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/pf-aponta-cobrancas-de-flavio-vorcaro-por-filme-dark-horse" target="_blank" rel="noopener">Fonte: Agência Brasil / relatórios da PF ↗</a></p></div></section>
+<section class="impact vorcaro-impact reveal-on-scroll"><div class="wrap"><div class="eyebrow">BANCO MASTER • DANIEL VORCARO</div><div class="number">R$ 131 MI</div><h2>pedidos para financiar o filme “Dark Horse”.</h2><p>Segundo relatórios da Polícia Federal tornados públicos em setembro de 2026, Flávio Bolsonaro pediu R$ 131 milhões a Daniel Vorcaro, então controlador do Banco Master, para financiar a cinebiografia de Jair Bolsonaro. A PF aponta que R$ 60 milhões teriam sido pagos. O inquérito investiga possível lavagem de dinheiro; não se trata de condenação. <a href="https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/pf-aponta-cobrancas-de-flavio-vorcaro-por-filme-dark-horse" target="_blank" rel="noopener">Fonte: Agência Brasil / relatórios da PF ↗</a></p></div></section>
 <section id="quiz"><div class="wrap"><div class="quiz-shell"><div id="game"><div class="quiz-head"><span id="counter">01 / 10</span><span id="scoreTop">0 acertos</span></div><div class="progress"><span id="bar"></span></div><div class="qbody"><div class="tag" id="tag"></div><h2 class="question" id="question"></h2><div class="answers" id="answers"></div><div class="reveal" id="reveal"><div class="status" id="status"></div><h3 id="answerTitle"></h3><p id="context"></p><a class="source" id="source" target="_blank" rel="noopener">Abrir fonte ↗</a><br><button class="next" id="next">Próxima pergunta →</button></div></div></div><div class="result" id="result"><div class="result-inner">
   <div class="result-kicker">Fim do quiz</div>
   <div class="result-title">Agora você lembra.</div>
@@ -150,13 +226,16 @@ const questions=[
 {tag:"VICE-PRESIDÊNCIA / INVESTIGAÇÃO",q:"O vice de qual candidato à Presidência em 2026 foi alvo de pedido de investigação no STF por suspeita de estupro de vulnerável?",options:["Flávio Bolsonaro","Luiz Inácio Lula da Silva","Romeu Zema"],answer:0,title:"Flávio Bolsonaro.",context:"Alfredo Gaspar, candidato a vice na chapa de Flávio Bolsonaro, foi alvo de pedido de investigação no STF por suspeita de estupro de vulnerável. Gaspar nega a acusação. Reportagens posteriores também registraram versões contraditórias do denunciante, portanto o caso deve ser tratado como suspeita sob apuração, não como condenação.",source:"https://www1.folha.uol.com.br/colunas/painel/2026/08/vice-de-flavio-e-alvo-de-pedido-de-investigacao-da-pf-no-supremo-por-suspeita-de-estupro-de-vulneravel.shtml",sourceName:"Folha de S.Paulo — Pedido de investigação sobre Alfredo Gaspar"},
 {tag:"DOCUMENTO PÚBLICO",q:"Qual instituição aprovou, por 7 votos a 4, o relatório final da CPI da Pandemia em 26 de outubro de 2021?",options:["Câmara dos Deputados","Comissão Parlamentar de Inquérito do Senado","Supremo Tribunal Federal"],answer:1,title:"A CPI do Senado.",context:"O Senado registra que o parecer foi aprovado por sete votos a quatro e depois encaminhado a diferentes órgãos públicos competentes.",source:"https://www12.senado.leg.br/noticias/materias/2021/10/26/apos-seis-meses-cpi-da-pandemia-e-encerrada-com-80-pedidos-de-indiciamento",sourceName:"Senado Federal — Encerramento da CPI da Pandemia"}];
 let i=0,score=0,locked=false;const el=id=>document.getElementById(id),answers=el("answers"),reveal=el("reveal");
-function render(){locked=false;const x=questions[i];el("counter").textContent=String(i+1).padStart(2,"0")+" / "+questions.length;el("scoreTop").textContent=score+" "+(score===1?"acerto":"acertos");el("bar").style.width=(i/questions.length*100)+"%";el("tag").textContent=x.tag;el("question").textContent=x.q;answers.innerHTML="";reveal.classList.remove("show");x.options.forEach((opt,idx)=>{const b=document.createElement("button");b.className="answer";b.textContent=opt;b.onclick=()=>choose(idx,b);answers.appendChild(b)})}
+function render(){locked=false;const x=questions[i];const qb=document.querySelector(".qbody");qb.classList.remove("q-enter");void qb.offsetWidth;qb.classList.add("q-enter");el("counter").textContent=String(i+1).padStart(2,"0")+" / "+questions.length;el("scoreTop").textContent=score+" "+(score===1?"acerto":"acertos");el("bar").style.width=(i/questions.length*100)+"%";el("tag").textContent=x.tag;el("question").textContent=x.q;answers.innerHTML="";reveal.classList.remove("show");x.options.forEach((opt,idx)=>{const b=document.createElement("button");b.className="answer";b.textContent=opt;b.onclick=()=>choose(idx,b);answers.appendChild(b)})}
 function choose(idx,button){if(locked)return;locked=true;const x=questions[i],buttons=[...document.querySelectorAll(".answer")];buttons.forEach((b,n)=>{b.disabled=true;if(n===x.answer)b.classList.add("good")});if(idx===x.answer){score++;el("status").textContent="Você acertou."}else{button.classList.add("bad");el("status").textContent="Não foi dessa vez."}el("answerTitle").textContent=x.title;el("context").textContent=x.context;el("source").href=x.source;el("source").textContent="Abrir fonte: "+x.sourceName+" ↗";el("scoreTop").textContent=score+" "+(score===1?"acerto":"acertos");reveal.classList.add("show")}
 el("next").onclick=()=>{if(i<questions.length-1){i++;render()}else finish()};function finish(){el("game").style.display="none";el("result").classList.add("show");el("finalScore").textContent=score+"/"+questions.length;el("bar").style.width="100%"}
 el("restart").onclick=()=>{i=0;score=0;el("game").style.display="block";el("result").classList.remove("show");render();document.querySelector("#quiz").scrollIntoView()};
 el("share").onclick=async()=>{const text="Eu fiz "+score+"/"+questions.length+" no quiz “Quem fez isso?”. Não fique só na memória: confira as fontes e tire sua própria conclusão.";if(navigator.share){try{await navigator.share({title:"Quem fez isso?",text,url:location.href})}catch(e){}}else{await navigator.clipboard.writeText(text+" "+location.href);alert("Resultado copiado!")}};
 el("shareWhatsapp").onclick=()=>{const text="Eu fiz "+score+"/"+questions.length+" no quiz “Quem fez isso?”. Não fique só na memória: confira as fontes e tire sua própria conclusão. "+location.href;window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener")};
-const uniq=[...new Map(questions.map(q=>[q.source,q])).values()];el("sourcesGrid").innerHTML=uniq.map(q=>'<article class="source-card"><b>'+q.sourceName+'</b><a href="'+q.source+'" target="_blank" rel="noopener">'+q.source+'</a></article>').join("");render();
+const uniq=[...new Map(questions.map(q=>[q.source,q])).values()];el("sourcesGrid").innerHTML=uniq.map(q=>'<article class="source-card"><b>'+q.sourceName+'</b><a href="'+q.source+'" target="_blank" rel="noopener">'+q.source+'</a></article>').join("");
+const io=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in-view");io.unobserve(entry.target)}})},{threshold:.18});
+document.querySelectorAll(".reveal-on-scroll").forEach(node=>io.observe(node));
+render();
 </script>
 </body>
 </html>
