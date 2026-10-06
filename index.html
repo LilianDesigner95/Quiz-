@@ -22,13 +22,56 @@
     .reveal{display:block;margin-top:30px;padding-top:24px;border-top:2px solid var(--ink)}.reveal.show{display:block}.reveal .status{font-size:13px;font-weight:950;text-transform:uppercase;letter-spacing:.1em}.reveal h3{font-size:clamp(28px,4vw,48px);line-height:1;margin:8px 0 12px}.reveal p{font-size:16px;line-height:1.55;max-width:790px}
     .source{display:inline-block;color:var(--ink);font-weight:900;margin:6px 0 22px;text-decoration-thickness:2px;text-underline-offset:3px}.next{border:0;background:var(--ink);color:var(--paper);padding:15px 18px;font-weight:950;cursor:pointer}.result{display:none;padding:clamp(28px,6vw,64px)}.result.show{display:block}.score{font-size:clamp(70px,17vw,190px);font-weight:1000;letter-spacing:-.08em;line-height:.8}.result h2{font-size:clamp(30px,5vw,60px);line-height:1;margin:28px 0 15px}.result p{max-width:700px;line-height:1.6}.result-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.ghost{border:2px solid var(--ink);background:transparent;color:var(--ink);padding:14px 18px;font-weight:950;cursor:pointer}
     .sources{padding:70px 0}.sources h2{font-size:clamp(42px,8vw,90px);letter-spacing:-.06em;margin:0 0 25px}.sources-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.source-card{border:1px solid var(--line);padding:18px;background:rgba(255,255,255,.28)}.source-card b{display:block;margin-bottom:8px}.source-card a{color:var(--ink);font-size:13px;word-break:break-word}
-    footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.5}@media(max-width:640px){.wrap{width:min(100% - 22px,1080px)}.topbar .source-link{display:none}.hero{padding-bottom:34px}.impact{padding:62px 0}#quiz{padding-top:42px}.quiz-shell{box-shadow:6px 6px 0 var(--ink)}}
+    .shock-stack{background:#000}
+.shock-card{min-height:92svh;display:flex;align-items:center;padding:88px 0;border-bottom:1px solid #2a2a2a}
+.shock-card .wrap{display:flex;flex-direction:column;align-items:flex-start}
+.shock-kicker{font-size:12px;font-weight:1000;letter-spacing:.16em;text-transform:uppercase;margin-bottom:24px}
+.shock-number{font-size:clamp(110px,23vw,280px);line-height:.72;letter-spacing:-.085em;font-weight:1000}
+.shock-word{font-size:clamp(64px,15vw,180px);line-height:.8;letter-spacing:-.07em;font-weight:1000;word-break:break-word}
+.shock-card h2{font-size:clamp(36px,7vw,88px);line-height:.92;letter-spacing:-.055em;margin:28px 0 14px;max-width:920px}
+.shock-card p{font-size:clamp(16px,2vw,22px);line-height:1.45;max-width:800px;margin:0 0 22px}
+.shock-card a{font-size:12px;font-weight:1000;letter-spacing:.08em;text-decoration-thickness:2px;text-underline-offset:4px}
+.shock-red{background:#d70d0d;color:#fff}.shock-red a{color:#fff}
+.shock-black{background:#050505;color:#f4f1e9}.shock-black .shock-number{color:#e7ff3f}.shock-black a{color:#e7ff3f}
+.shock-paper{background:#f2efe7;color:#0b0b0b}.shock-paper a{color:#0b0b0b}
+footer{padding:34px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.5}@media(max-width:640px){.shock-card{min-height:82svh;padding:62px 0}.wrap{width:min(100% - 22px,1080px)}.topbar .source-link{display:none}.hero{padding-bottom:34px}.impact{padding:62px 0}#quiz{padding-top:42px}.quiz-shell{box-shadow:6px 6px 0 var(--ink)}}
   </style>
 </head>
 <body>
 <header class="topbar"><div class="wrap"><div class="brand">QUEM FEZ ISSO?</div><a class="source-link" href="#fontes">VER TODAS AS FONTES ↘</a></div></header>
 <main>
 <section class="hero"><div class="wrap"><div class="eyebrow">Quiz factual • Brasil</div><h1>Você lembra?</h1><p>Quem fez isso? Quem falou isso? Teste sua memória política e confira a fonte antes de formar sua conclusão.</p><button class="cta" onclick="document.querySelector('#quiz').scrollIntoView()">Começar o quiz →</button><div class="micro">As perguntas abaixo usam dados e documentos públicos. O objetivo é apresentar fatos verificáveis com contexto e fonte, sem substituir a leitura integral dos documentos.</div></div></section>
+<section class="shock-stack">
+  <article class="shock-card shock-red">
+    <div class="wrap">
+      <div class="shock-kicker">BRASIL • COVID-19</div>
+      <div class="shock-number">708 MIL+</div>
+      <h2>óbitos por Covid-19.</h2>
+      <p>O Ministério da Saúde registra mais de 708 mil mortes ao longo da pandemia e aponta 2021 como o ano com maior registro de hospitalizações e óbitos por Covid-19.</p>
+      <a href="https://www.gov.br/saude/pt-br/vacinacao/publicacoes/estrategia-de-vacinacao-contra-a-covid-19-2024" target="_blank" rel="noopener">MINISTÉRIO DA SAÚDE ↗</a>
+    </div>
+  </article>
+
+  <article class="shock-card shock-black">
+    <div class="wrap">
+      <div class="shock-kicker">CPI DA PANDEMIA • 2021</div>
+      <div class="shock-number">80</div>
+      <h2>pedidos de indiciamento.</h2>
+      <p>O relatório final aprovado pela CPI da Pandemia reuniu 80 pedidos de indiciamento. Entre eles estava o então presidente Jair Bolsonaro. A CPI fez recomendações; isso não equivale, por si só, a condenação judicial.</p>
+      <a href="https://www12.senado.leg.br/noticias/materias/2021/10/26/apos-seis-meses-cpi-da-pandemia-e-encerrada-com-80-pedidos-de-indiciamento" target="_blank" rel="noopener">SENADO FEDERAL ↗</a>
+    </div>
+  </article>
+
+  <article class="shock-card shock-paper">
+    <div class="wrap">
+      <div class="shock-kicker">RACHADINHAS • ALERJ</div>
+      <div class="shock-word">RACHADINHAS.</div>
+      <h2>Você lembra desse caso?</h2>
+      <p>O caso envolveu investigação sobre suspeita de devolução de parte dos salários de assessores do antigo gabinete de Flávio Bolsonaro na Alerj. Em 2021, a Segunda Turma do STF anulou quatro de cinco relatórios do Coaf por considerar irregular a forma como foram obtidos.</p>
+      <a href="https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=477496" target="_blank" rel="noopener">SUPREMO TRIBUNAL FEDERAL ↗</a>
+    </div>
+  </article>
+</section>
 <section class="impact"><div class="wrap"><div class="eyebrow">Pandemia de Covid-19</div><div class="number">708 mil+</div><h2>óbitos por Covid-19 registrados no Brasil.</h2><p>O Ministério da Saúde registra mais de 38 milhões de casos e mais de 708 mil óbitos ao longo da pandemia. O próprio Ministério informa que 2021 foi o ano com o maior registro de hospitalizações e mortes por Covid-19. <a href="https://www.gov.br/saude/pt-br/vacinacao/publicacoes/estrategia-de-vacinacao-contra-a-covid-19-2024" target="_blank" rel="noopener">Fonte: Ministério da Saúde ↗</a></p></div></section>
 <section id="quiz"><div class="wrap"><div class="quiz-shell"><div id="game"><div class="quiz-head"><span id="counter">01 / 10</span><span id="scoreTop">0 acertos</span></div><div class="progress"><span id="bar"></span></div><div class="qbody"><div class="tag" id="tag"></div><h2 class="question" id="question"></h2><div class="answers" id="answers"></div><div class="reveal" id="reveal"><div class="status" id="status"></div><h3 id="answerTitle"></h3><p id="context"></p><a class="source" id="source" target="_blank" rel="noopener">Abrir fonte ↗</a><br><button class="next" id="next">Próxima pergunta →</button></div></div></div><div class="result" id="result"><div class="eyebrow">Seu resultado</div><div class="score" id="finalScore">0/10</div><h2>Memória política melhora quando a fonte vem junto.</h2><p>Você pode refazer o quiz, conferir cada documento ou compartilhar o seu resultado sem revelar as respostas.</p><div class="result-actions"><button class="cta" id="share">Compartilhar resultado</button><button class="ghost" id="restart">Refazer quiz</button></div></div></div></div></section>
 <section class="sources" id="fontes"><div class="wrap"><div class="eyebrow">Documentos consultados</div><h2>Fontes.</h2><div class="sources-grid" id="sourcesGrid"></div></div></section>
